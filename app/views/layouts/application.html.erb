@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hola</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div class="row be-red white large-padding middle-xs">
+		<div class="col-xs center-xs">
+			<h1 class="no-margin" id="logo">Logo</h1>
+		</div>
+	    <div class="col-xs center-xs">
+	        <%= link_to "Inicio", root_path %>
+	    </div>
+	    <div class="col-xs center-xs">
+	        Diseño
+	    </div>
+	    <div class="col-xs center-xs">
+	        Programación
+	    </div>
+	    <div class="col-xs center-xs">
+	        Tecnología
+	    </div>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>
