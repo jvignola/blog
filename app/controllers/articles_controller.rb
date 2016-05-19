@@ -10,7 +10,15 @@ class ArticlesController < ApplicationController
 	end
 	def create
 		@article = Article.new(title: params[:article][:title], body: params[:article][:body])
-		@article.save
-		redirect_to @article
+		if @article.save
+			redirect_to @article
+		else
+			render 'new'
+		end
+	end
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+		redirect_to articles_path
 	end
 end
