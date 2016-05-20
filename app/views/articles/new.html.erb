@@ -1,8 +1,3 @@
 <div class="form-container">
-  <h1>Crear Artículo</h1>
-  <%= simple_form_for @article do |f| %>
-    <%= f.input :title, label: 'Título', error: 'El título es obligatorio, por favor, ingresa uno', input_html: {class:'form_control'} %>
-    <%= f.input :body, label: 'Cuerpo', placeholder: 'Ingrese aqui el cuerpo del artículo...', input_html: {class:'form_control'} %>
-  <%= f.button :submit, 'Crear Artículo' %>
-<% end %>
+  <%= render "form",accion: "Crear"  %>
 </div>
