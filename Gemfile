@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 #agregamos simple_form
 gem 'simple_form'
+#agregamos devise
+gem 'devise'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

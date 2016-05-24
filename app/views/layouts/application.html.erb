@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 	<div class="row be-red white large-padding middle-xs">
 		<div class="col-xs center-xs">
 			<h1 class="no-margin" id="logo">Logo</h1>
@@ -25,7 +24,18 @@
 	    <div class="col-xs center-xs">
 	        Tecnología
 	    </div>
+
+	    <% if user_signed_in? %>
+	    	<div class="col-xs center-xs"><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></div>
+		<% else %>
+			<div class="col-xs center-xs"><%= link_to "Iniciar sesión", new_user_session_path %></div>
+			<div class="col-xs center-xs"><%= link_to "Crear cuenta", new_user_registration_path %></div>
+		<% end %>
+
+
 	</div>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
