@@ -5,6 +5,15 @@
 <% unless @article.visits_count.nil? %>
 	<p>Visitas: <%= @article.visits_count %></p>
 <% end %>
+<% unless @article.cover.nil? %>
+	<p><%= image_tag @article.cover.url() %></p>
+<% end %>
 <%= @article.body %>
 <%= link_to "Editar", edit_article_path(@article) %>
+<h3>Comentarios:</h3>
+<%= render "comments/form"%>
+<% @article.comments.each do |comment|%>
+	<p><%= comment.body %> - <%= comment.user.email %></p>	
+<% end %>
+
 

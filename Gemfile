@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'simple_form'
 #agregamos devise
 gem 'devise'
+# agregamos paperclip
+gem 'paperclip'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
