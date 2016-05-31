@@ -10,20 +10,13 @@
 <body>
 	<div class="row be-red white large-padding middle-xs">
 		<div class="col-xs center-xs">
-			<h1 class="no-margin" id="logo">Logo</h1>
+			<h1 class="no-margin" id="logo"><%=link_to "Logo", root_path %></h1>
 		</div>
-	    <div class="col-xs center-xs">
-	        <%= link_to "Inicio", root_path %>
-	    </div>
-	    <div class="col-xs center-xs">
-	        Diseño
-	    </div>
-	    <div class="col-xs center-xs">
-	        Programación
-	    </div>
-	    <div class="col-xs center-xs">
-	        Tecnología
-	    </div>
+		<% @categories.each do |category| %>
+			<div class="col-xs center-xs">
+			  <%= link_to category.name, category %>
+			</div>
+		<% end %>
 
 	    <% if user_signed_in? %>
 	    	<div class="col-xs center-xs"><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   devise_for :users
   #get 'welcome/index'
   get 'miruta', to: 'welcome#index'
